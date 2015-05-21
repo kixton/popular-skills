@@ -1,0 +1,35 @@
+
+<h2>Jobs</h2>
+<% @jobs.each do |job| %>
+  <strong>Job:</strong> <%= job.title %><br>
+  <strong>Skills:</strong>
+    <% job.skills.each do |skill| %>
+      <%= skill.name %>
+    <% end %><br>
+  <strong>Role Type:</strong>
+    <% job.jobroles.each do |role| %>
+      <%= role.name %>
+    <% end %><br>
+  <strong>Compensation:</strong>
+    $<%= number_with_delimiter(job.compensation.salary_min, :delimiter => ',') %> -
+    <%= number_with_delimiter(job.compensation.salary_max, :delimiter => ',') %><br>
+    <%= number_to_percentage(job.compensation.equity_min, precision: 2) %> -
+    <%= number_to_percentage(job.compensation.equity_max, precision: 2) %><br>
+
+  <br>
+<% end %>
+
+<h2>Jobrole</h2>
+<% @jobroles.each do |role| %>
+  <%= role.name %>
+<% end %>
+
+<h2>Skills</h2>
+<% @skills.each do |skill| %>
+  <%= skill.name %>
+<% end %>
+
+<h2>Companies</h2>
+<% @companies.each do |company| %>
+  <%= company.name %>
+<% end %>
