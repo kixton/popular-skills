@@ -5,5 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Jobtype.create([{name: "full-time"}, {name: "contract"}, {name: "internship"}, {name: "cofounder"}])
