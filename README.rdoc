@@ -1,4 +1,7 @@
 bundle install
-rake db:create
+
+rake db:create db:migrate
+
 rails server
+
 localhost:3000
