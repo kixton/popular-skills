@@ -1,0 +1,128 @@
+/* line 1, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #efefef;
+  overflow-x: hidden;
+}
+
+/* line 8, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+a {
+  color: #000;
+}
+
+/* line 12, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+.container {
+  text-align: center;
+  height: 100vh;
+}
+
+/* line 17, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#heading {
+  font-size: 30px;
+  font-weight: 300;
+  padding: 10px;
+}
+/* line 21, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#heading .sub-heading {
+  font-size: 14px;
+  margin: 0;
+  text-transform: none;
+}
+
+/* line 28, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#svg-canvas {
+  border: 1px solid #aaa;
+  background: #fff;
+  margin: 20px;
+}
+/* line 32, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#svg-canvas .label {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* line 38, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#process {
+  background: #fff;
+  margin: 20px 0;
+  border-top: 10px solid #333;
+  padding: 10px 20px;
+}
+/* line 43, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#process .grouped-skills {
+  width: 500px;
+  margin: auto;
+  text-align: left;
+}
+/* line 48, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#process .img-container {
+  width: 100%;
+  max-width: 580px;
+  max-height: 270px;
+  overflow: hidden;
+  margin: auto;
+}
+/* line 54, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+#process .img-container .infographic {
+  width: 100%;
+}
+
+/* line 60, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+.api {
+  background: #ddd;
+  padding: 2px 7px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+/* line 68, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+/* line 74, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+.axis text {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 550px) {
+  /* line 79, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+  #heading {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+  /* line 83, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+  #heading .sub-heading {
+    font-weight: 300;
+  }
+  /* line 85, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+  #heading .sub-heading .more {
+    display: block;
+  }
+
+  /* line 91, /Users/KimAnhPham/code/mks/angelist/app/assets/stylesheets/main.css.scss */
+  #process .grouped-skills {
+    width: auto;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
