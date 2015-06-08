@@ -1,3 +1,5 @@
+Note: This project accesses the AngelList API /jobs endpoint which requires whitelist access. Please contact api@angel.co to request access.
+
 bundle install
 
 rake db:create db:migrate
