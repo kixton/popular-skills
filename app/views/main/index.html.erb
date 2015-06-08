@@ -1,35 +1,46 @@
-
-<h2>Jobs</h2>
-<% @jobs.each do |job| %>
-  <strong>Job:</strong> <%= job.title %><br>
-  <strong>Skills:</strong>
-    <% job.skills.each do |skill| %>
-      <%= skill.name %>
-    <% end %><br>
-  <strong>Role Type:</strong>
-    <% job.jobroles.each do |role| %>
-      <%= role.name %>
-    <% end %><br>
-  <strong>Compensation:</strong>
-    $<%= number_with_delimiter(job.compensation.salary_min, :delimiter => ',') %> -
-    <%= number_with_delimiter(job.compensation.salary_max, :delimiter => ',') %><br>
-    <%= number_to_percentage(job.compensation.equity_min, precision: 2) %> -
-    <%= number_to_percentage(job.compensation.equity_max, precision: 2) %><br>
-
-  <br>
-<% end %>
-
-<h2>Jobrole</h2>
-<% @jobroles.each do |role| %>
-  <%= role.name %>
-<% end %>
-
-<h2>Skills</h2>
-<% @skills.each do |skill| %>
-  <%= skill.name %>
-<% end %>
-
-<h2>Companies</h2>
-<% @companies.each do |company| %>
-  <%= company.name %>
-<% end %>
+<div class="container">
+  <div id="heading">
+    Most In-Demand Skills in San Francisco
+    <p class="sub-heading">Based on data from <a href="https://angel.co/api/spec/jobs" target="_blank">AngelList</a> (as of June 8, 2015). <span class="more">Read about the data analysis <a href="#process">process</a>.</span></p>
+  </div>
+  <div class="chart-container"></div>
+  <div id="process">
+    <h2>The Process</h2>
+    <h4>Data Collection</h4>
+      <p>Data was obtained from the AngelList API <a href="https://angel.co/api/spec/jobs" target="_blank" class="api">/jobs</a> endpoint.<br>
+      Only <strong>full-time</strong> jobs in <strong>San Francisco, CA</strong> were analyzed to normalize for differences across job type and geography.<br>
+      Each job listing included salary range and <strong>skill tag(s)</strong> that represent skills related to a job.</p>
+    <h4>Data Cleanup</h4>
+      <p>Jobs with no salary listed or salary of $0 were removed.<br>
+      Outliers were also removed, which included a job posting with a salary of $75,000,000</p>
+      <p>The below related skill tags were grouped for purposes of analysis.<br>
+      If a job posting included two or more of the grouped tags, it was only counted once toward average salary calculation.</p>
+      <ul class="grouped-skills">
+        <li>Javascript, Javascript Frameworks, Javascript-JS Library</li>
+        <li>Python, Django, Django/Flask</li>
+        <li>Ruby on Rails, Ruby\Rails, Ruby, Rails, Backend Rails Development</li>
+        <li>iOS Development, iOS, Objective C, Objective-C, Swift</li>
+        <li>CSS, HTML, HTML5 &amp; CSS3, HTML5  CSS3, HTML/CSS, HTML5/CSS3</li>
+        <li>Sales, Sales and Marketing</li>
+        <li>Node.js, Nodejs, NodeJs/Express, Node.js Developer, Node JS, Node</li>
+        <li>PHP, PHP5, PHP Frameworks, Laravel</li>
+      </ul>
+    <h4>Data Overview</h4>
+      <p><strong>Total Jobs Analyzed:</strong> 2,973<br>
+      <strong>Total Skill Tags Analyzed:</strong> 14,885</p>
+      <p><strong>Minimum Salary Mean:</strong> $81,737<br>
+      <strong>Maximum Salary Mean:</strong> $121,003</p>
+      <p><strong>Minimum Salary Range:</strong> $10,000 - 260,000<br>
+      <strong>Maximum Salary Range:</strong> $10,000 - 340,000</p>
+    <h4>Conclusion</h4>
+      <p><strong>JavaScript</strong> is the most in-demand skill with <strong>17.3% (515 of 2,973)</strong> jobs listing JavaScript as a skill tag.<br>
+      <strong>Java</strong> is the highest paying skill with 7.6% (227 of 2,973) jobs paying an average of <strong>$120,985</strong>.<br>
+      <strong>Sales and Marketing)</strong> is the most in-demand non-technical skill with <strong>12.2% (363 of 2,973)</strong> jobs paying an average of <strong>$85,140</strong>.</p>
+    <h4>Additional Comments</h4>
+      <div class="img-container">
+        <a href="https://blog.udemy.com/modern-language-wars/" target="_blank"><img class="infographic" src="https://blog.udemy.com/wp-content/uploads/2012/01/PROGRAMMING-LANGUAGE-3-620x3450.png"></a>
+      </div>
+      <p>In 2012, Udemy released an <a href="https://blog.udemy.com/modern-language-wars/" target="_blank">infographic</a> comparing modern programming languages. It suggested that <strong>PHP</strong> was the dominant skill, followed by Python and Ruby. This differs from analysis from the AngelList data, which ranked <strong>PHP #45</strong> based on frequency of the skill tag, with only <strong>2.0% (63 of 2,973)</strong> jobs requiring the skill.</p>
+      <p>The main reason for this discrepancy is the <strong>source of data</strong> for the Udemy infographic was <a href="http://craigslist.org/" target="_blank">Craigslist</a> and <a href="http://www.monster.com/" target="_blank">Monster</a>, websites for general job listings. Data for this data visualization project was from <a href="http://angel.co/" target="_blank">AngelList</a>, a website for startups. Additionally, Udemy did not include JavaScipt in their research.</p>
+  </div>
+</div>
