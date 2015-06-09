@@ -90,8 +90,7 @@ $("document").ready(function(){
       .append("text")
       .text(function(d) {
         avg_salary = (d.value.total_salary_min + d.value.total_salary_max) / (d.value.count * 2);
-        return d.key + " ($" + avg_salary.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ")"
-          + d.value.count;
+        return d.key + " ($" + avg_salary.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ")";
       })
       .attr("x", function(d) {
         console.log(d.key);
